@@ -13,6 +13,14 @@ class ThinAirfoilTheory:
         self.analytical_solver = None
         self.numerical_solver = None
 
+    def set_flow_conditions(self, V_inf, rho, alpha_deg):
+        self.V_inf = V_inf
+        self.rho = rho
+        self.alpha_rad = np.radians(alpha_deg)
+
+    def set_N_panels(self, N):
+        self.N = N
+
     def prepare(self):
         self.geometry = GeometryHandler(self.filename)
         x, y = self.geometry.read_surface_coordinates()
@@ -30,7 +38,7 @@ class ThinAirfoilTheory:
         print(f"[Analytical] Cl = {Cl:.4f}, Cm_LE = {Cm:.4f}")
         return Cl, Cm
 
-    def run_numerical(self, N, V_inf, rho):
-        Cl, gamma = self.numerical_solver.run(N, V_inf, rho)
+    def run_numerical(self, alpha_deg):
+        Cl, gamma, x_quarter = self.numerical_solver.run(self.N, self.V_inf, self.rho, alpha_deg)
         print(f"[Numerical] Cl = {Cl:.4f}")
-        return Cl, gamma
+        return Cl, gamma, x_quarter
