@@ -261,6 +261,6 @@ class ThinAirfoilTheory(object):
 
 if __name__ == '__main__':
 	thin_theory = ThinAirfoilTheory()
-	thin_theory.read_file(filename='NACA 2408.dat')
+	thin_theory.read_file(filename='foils/NACA0012.dat')
 	thin_theory.build_mean_camber_line(max_pol_degree=7)
 	A0, A1, A2 = thin_theory.solve_theory(angle_of_attack=5*np.pi/180, n_coefficients=3)
