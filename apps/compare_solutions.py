@@ -10,8 +10,8 @@ data_file = str((here / '..' / 'foils' / 'NACA0012.dat').resolve())
 
 theory = ThinAirfoilTheory(data_file)
 theory.prepare()
-theory.set_N_panels(N=100)
-theory.set_flow_conditions(V_inf=50.0, rho=1.225, alpha_deg=5.0)
+theory.set_N_panels(N=10)
+theory.set_flow_conditions(V_inf=90.0, rho=1.225, alpha_deg=5.0)
 
 alpha = np.linspace(-4, 15, 50)  # Angle of attack from -4 to 15 degrees
 
