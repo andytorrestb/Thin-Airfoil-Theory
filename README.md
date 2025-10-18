@@ -11,3 +11,8 @@ The user may visualize how good the actual fitting using the built-in method `vi
 
 ## References.
 Anderson Jr, J. D. (2010). Fundamentals of aerodynamics. Tata McGraw-Hill Education.
+
+## Disclaimer.
+This project is forked from (https://github.com/DavidPoves/Thin-Airfoil-Theory). I broke the fork becuase I am commit-maxxing.
+
+Many thanks to the original author for developing and openly sharing this code.
